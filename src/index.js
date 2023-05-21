@@ -9,20 +9,20 @@ const port = process.env.PORT || 3000
 app.get('/', async (req, res) => {
   const stories = await storify()
 
-  const articles = (await Promise.all(stories.map(async ({ title, created_at, url, author, objectId }) => {
-    if(!url) url = `https://news.ycombinator.com/item?id=${objectID}`;
+  const articles = (await Promise.all(stories.map(async ({ title, created_at, url, author, objectID }) => {
+    const comments = `https://news.ycombinator.com/item?id=${objectID}`
+    if(!url) url = comments;
 
     console.log('fetching', url)
     try {
       return {
-        item: {
-          ...await readify(url),
-          title,
-          pubDate: created_at,
-          contributor: {
-            name: author
-          }
-        }
+        item: [
+          { title },
+          { pubDate: created_at },
+          { link: url },
+          { comments: comments },
+          ...await readify(url)
+        ]
       };
     } catch(e) {
       console.error(`Failed to parse ${url}`, e)

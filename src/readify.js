@@ -7,30 +7,18 @@ async function htmlToArticle(res) {
   let reader = new Readability(doc.window.document);
   let article = reader.parse();
 
-  return {
-    title: article.title,
-    link: res.url,
-    description: truncate(article.content, 4000, { byWords: true }),
-    author: {
-      name: article.byline,
-    },
-    source: {
-      id: res.url,
-      title: article.siteName || res.url,
-    }
-  }
-
+  return [
+    { description: truncate(article.content, 4000, { byWords: true }) },
+    { author: article.byline },
+    { _name: 'source', _attrs: { url: res.url }, _content: article.siteName || article.title || res.url }
+  ]
 }
 
 async function textToArticle(res) {
-  return {
-    link: res.url,
-    description: await res.text(),
-    source: {
-      id: res.url,
-      title: res.url
-    }
-  }
+  return [
+    { description: await res.text() },
+    { _name: 'source', _attrs: { url: res.url }, _content: res.url }
+  ]
 }
 
 module.exports = async (url) => {
