@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@mozilla/readability": "^0.4.4",
+    "jsdom": "^22.0.0",
+    "jstoxml": "^3.2.7",
+    "linkedom": "^0.14.26",
+    "truncate-html": "^1.0.4",
+    "xml": "^1.0.1"
+  }
+}
