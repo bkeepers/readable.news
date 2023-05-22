@@ -9,8 +9,7 @@ async function htmlToArticle(res) {
 
   return [
     { description: truncate(article.content, 4000, { byWords: true }) },
-    { author: article.byline },
-    { _name: 'source', _attrs: { url: res.url }, _content: article.siteName || article.title || res.url }
+    { _name: 'source', _attrs: { url: res.url }, _content: article.siteName || article.byline || article.title || res.url }
   ]
 }
 
