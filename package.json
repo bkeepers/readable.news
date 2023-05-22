@@ -2,12 +2,9 @@
   "dependencies": {
     "@mozilla/readability": "^0.4.4",
     "express": "^4.18.2",
-    "jsdom": "^22.0.0",
-    "jstoxml": "^3.2.7",
     "linkedom": "^0.14.26",
     "open-graph-scraper": "^6.0.1",
-    "truncate-html": "^1.0.4",
-    "xml": "^1.0.1"
+    "truncate-html": "^1.0.4"
   },
   "scripts": {
     "start": "node src/index.js",
