@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
       return {
         item: [
           { title },
-          { pubDate: created_at },
+          { pubDate: new Date(created_at).toUTCString() },
           { link: url },
           { comments: comments },
           ...await readify(url)
