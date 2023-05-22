@@ -1,17 +1,20 @@
-var { Readability } = require('@mozilla/readability');
+const { Readability } = require('@mozilla/readability');
+const ogs = require('open-graph-scraper')
 const { parseHTML} = require('linkedom');
 const truncate = require('truncate-html')
 
 async function htmlToArticle(res) {
-  var doc = parseHTML(await res.text(), { url: res.url });
-  let reader = new Readability(doc.window.document);
-  let article = reader.parse();
+  const html = await res.text()
+
+  const article = new Readability(parseHTML(html, { url: res.url }).window.document).parse();
+  const og = (await ogs({ html })).result
 
   return {
     content_html: truncate(article.content, 4000, { byWords: true }),
     excerpt: article.excerpt,
+    image: og?.ogImage?.[0]?.url,
     author: {
-      name: article.siteName || article.byline || article.title,
+      name: article.siteName || article.byline || og.ogSiteName || article.title,
       url: res.url
     }
   }

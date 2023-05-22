@@ -11,6 +11,8 @@ app.get('/', async (req, res) => {
     title: "Hacker News Feed",
     home_page_url: "https://feedify.herokuapp.com/",
     feed_url: "https://feedify.herokuapp.com/",
+    icon: "https://news.ycombinator.com/y18.svg",
+    favicon: "https://news.ycombinator.com/favicon.ico",
     items: await Promise.all((await storify()).map(readify))
   }
 
