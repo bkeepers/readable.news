@@ -30,19 +30,19 @@ async function textToArticle(res) {
 }
 
 module.exports = async (item) => {
-  if(!item.external_url) return item
+  if(!item.url) return item
   try {
-    const res = await fetch(item.external_url);
+    const res = await fetch(item.url);
     const contentType = res.headers.get('Content-Type').split(';')[0];
     if(contentType === "text/html") {
       return Object.assign(item, await htmlToArticle(res));
     } else if (contentType === "text/plain") {
       return Object.assign(item, await textToArticle(res));
     } else {
-      throw new Error(`Unknown Content-Type for ${item.external_url}: ${contentType}`);
+      throw new Error(`Unknown Content-Type for ${item.url}: ${contentType}`);
     }
   } catch (err) {
-    console.error(`Failed to parse ${item.external_url}`, err)
+    console.error(`Failed to parse ${item.url}`, err)
     return item
   }
 }

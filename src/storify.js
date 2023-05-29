@@ -7,8 +7,8 @@ module.exports = async (date = new Date()) => {
     const id = `https://news.ycombinator.com/item?id=${objectID}`
     return {
       id,
-      url: id,
-      external_url: url,
+      url,
+      external_url: id,
       title,
       date_published: created_at
     }
