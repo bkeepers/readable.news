@@ -1,4 +1,6 @@
 {
+  "private": true,
+  "type": "module",
   "dependencies": {
     "@mozilla/readability": "^0.4.4",
     "express": "^4.18.2",

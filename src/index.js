@@ -1,8 +1,8 @@
-const express = require('express');
-const storify = require ('./storify');
-const readify = require('./readify');
-const jsonfeedToRSS = require('jsonfeed-to-rss')
-const jsonfeedToAtom = require('jsonfeed-to-atom')
+import express from 'express';
+import storify from './storify.js';
+import readify from './readify.js';
+import jsonfeedToRSS from 'jsonfeed-to-rss';
+import jsonfeedToAtom from 'jsonfeed-to-atom';
 
 const app = express()
 const port = process.env.PORT || 3000

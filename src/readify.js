@@ -1,7 +1,7 @@
-const { Readability } = require('@mozilla/readability');
-const ogs = require('open-graph-scraper')
-const { parseHTML} = require('linkedom');
-const truncate = require('truncate-html')
+import { Readability } from '@mozilla/readability';
+import ogs from 'open-graph-scraper';
+import { parseHTML } from 'linkedom';
+import truncate from 'truncate-html';
 
 async function htmlToArticle(res) {
   const html = await res.text()
@@ -29,7 +29,7 @@ async function textToArticle(res) {
   }
 }
 
-module.exports = async (item) => {
+export default async (item) => {
   if(!item.url) return item
   try {
     const res = await fetch(item.url);

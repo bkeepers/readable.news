@@ -1,4 +1,4 @@
-module.exports = async (date = new Date()) => {
+export default async (date = new Date()) => {
   const endTime = Math.round(new Date(date).getTime() / 1000);
   const startTime = Math.round(new Date(date).getTime() / 1000) - (24 * 60 * 60);
 
