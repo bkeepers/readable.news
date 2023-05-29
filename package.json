@@ -1,20 +1,32 @@
 {
+  "name": "feedify",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
+  "scripts": {
+    "dev:client": "vite",
+    "dev:server": "nodemon src/index.js",
+    "dev": "concurrently 'npm:dev:client' 'npm:dev:server'",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node src/index.js"
+  },
   "dependencies": {
     "@mozilla/readability": "^0.4.4",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-logging": "^1.1.1",
     "jsonfeed-to-atom": "^1.2.4",
     "jsonfeed-to-rss": "^3.0.7",
     "linkedom": "^0.14.26",
     "open-graph-scraper": "^6.0.1",
-    "truncate-html": "^1.0.4"
-  },
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "truncate-html": "^1.0.4",
+    "vue": "^3.2.47"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "@vitejs/plugin-vue": "^4.1.0",
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22",
+    "vite": "^4.3.2"
   }
 }
