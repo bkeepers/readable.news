@@ -1,24 +1,17 @@
 <script setup>
-import Feed from './components/Feed.vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 </script>
 
 <template>
-  <Suspense>
-    <Feed />
-  </Suspense>
+  <div :class="{
+    'container-xl mx-auto p-8 min-h-screen': true,
+    'bg-slate-100 dark:bg-slate-900 dark:text-slate-200': route.meta.bg !== 'white',
+    'bg-white dark:bg-slate-900 dark:text-slate-200': route.meta.bg === 'white'
+  }">
+    <Suspense>
+      <router-view></router-view>
+    </Suspense>
+  </div>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .avatar {
+    @apply w-[18px] h-[18px] rounded overflow-hidden dark:grayscale dark:invert dark:contrast-150 object-contain;
+  }
+}

@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000
 const environment = process.env.NODE_ENV
 const manifest = environment === 'production' ? await import(path.join(path.resolve(), "dist", "manifest.json")) : {}
 
-async function feed() {
+async function feed({ period }) {
   return {
     version: "https://jsonfeed.org/version/1",
     title: "Hacker News Feed",
@@ -19,25 +19,30 @@ async function feed() {
     feed_url: "https://feedify.herokuapp.com/",
     icon: "https://news.ycombinator.com/y18.svg",
     favicon: "https://news.ycombinator.com/favicon.ico",
-    items: await Promise.all((await storify()).map(readify))
+    items: await Promise.all((await storify({ period })).map(readify))
   }
 }
 
 app.use(logging(console))
 
+const cacheControl = 'max-age=' + (60 * 15)
+
 app.get('/feed.json', async (req, res) => {
+  res.set('Cache-Control', cacheControl)
   res.set('Content-Type', 'application/json');
-  res.send(JSON.stringify(await feed(), null, 2));
+  res.send(JSON.stringify(await feed(req.query), null, 2));
 })
 
 app.get('/feed.rss', async (req, res) => {
+  res.set('Cache-Control', cacheControl)
   res.set('Content-Type', 'application/rss+xml');
-  res.send(jsonfeedToRSS(await feed()));
+  res.send(jsonfeedToRSS(await feed(req.query)));
 })
 
 app.get('/feed.atom', async (req, res) => {
+  res.set('Cache-Control', cacheControl)
   res.set('Content-Type', 'application/atom+xml');
-  res.send(jsonfeedToAtom(await feed()));
+  res.send(jsonfeedToAtom(await feed(req.query)));
 })
 
 if(environment !== 'production') {
@@ -50,7 +55,7 @@ if(environment !== 'production') {
   });
 }
 
-app.get("/*", async (_req, res) => {
+app.get("/", async (_req, res) => {
   res.render("index.html.ejs", { environment, manifest });
 });
 
