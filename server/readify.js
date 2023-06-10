@@ -3,6 +3,12 @@ import ogs from 'open-graph-scraper';
 import { parseHTML } from 'linkedom';
 import truncate from 'truncate-html';
 
+function absoluteUrl(url, base) {
+  if(!url) return
+
+  return new URL(url, base).toString()
+}
+
 async function htmlToArticle(res) {
   const html = await res.text()
 
@@ -12,11 +18,12 @@ async function htmlToArticle(res) {
   return {
     content_html: truncate(article.content, 4000, { byWords: true }),
     excerpt: article.excerpt,
-    image: og?.ogImage?.[0]?.url,
-    author: {
-      name: article.siteName || article.byline || og.ogSiteName || article.title,
-      url: res.url
-    }
+    image: absoluteUrl(og?.ogImage?.[0]?.url, res.url),
+    authors: [{
+      name: article.siteName || og.ogSiteName || article.byline,
+      url: res.url,
+      avatar: absoluteUrl(og.favicon, res.url)
+    }]
   }
 }
 

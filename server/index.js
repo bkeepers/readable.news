@@ -45,6 +45,12 @@ app.get('/feed.atom', async (req, res) => {
   res.send(jsonfeedToAtom(await feed(req.query)));
 })
 
+app.get('/readify', async (req, res) => {
+  res.set('Cache-Control', cacheControl);
+  res.set('Content-Type', 'application/json');
+  res.send(JSON.stringify(await readify({ url: req.query.url })))
+})
+
 if(environment !== 'production') {
   // Serve static assets in public/
   app.use("/", express.static(path.join(path.resolve(), "public")))
