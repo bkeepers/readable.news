@@ -1,4 +1,4 @@
-import { reactive, computed, unref } from 'vue'
+import { computed, unref } from 'vue'
 import { useStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { useFetch } from '@vueuse/core'
@@ -12,14 +12,14 @@ export const useFeedStore = defineStore('feed', () => {
     return url.toString()
   })
 
-  const fetch = reactive(useFetch(api, { refetch: true }).json())
-  const items = computed(() => fetch.data?.items)
+  const fetch = useFetch(api, { refetch: true }).json()
+  const items = computed(() => fetch.data.value?.items)
 
   function find(id) {
     return computed(() => {
-      return fetch.data?.items?.find(item => item.id === id)
+      return fetch.data.value?.items?.find(item => item.id === id)
     })
   }
 
-  return { items, params, find, fetch }
+  return { items, params, find, ...fetch }
 })

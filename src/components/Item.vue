@@ -13,7 +13,7 @@ const props = defineProps({
   authors: Array
 })
 
-const domain = computed(() => new URL(props.url).hostname)
+const domain = computed(() => props.url && new URL(props.url).hostname)
 const author = props.authors?.[0]
 </script>
 
