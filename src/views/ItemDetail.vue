@@ -13,7 +13,7 @@ const domain = computed(() => item?.url && new URL(item?.url).hostname)
 </script>
 
 <template>
-  <div v-if="item" class="mx-auto prose prose-slate md:prose-lg lg:prose-xl dark:prose-invert py-16 prose-img:w-full">
+  <div v-if="item" class="mx-auto prose prose-slate sm:prose-lg md:prose-xl dark:prose-invert p-4 md:p-8 lg:py-16 prose-img:w-full">
     <base :href="item.url" />
     <div class="not-prose border-b pb-4 mb-4 flex flex-col gap-2">
       <div v-if="item.authors?.[0]" class="flex gap-2 place-items-center text-xs text-slate-500 truncate">
@@ -31,13 +31,13 @@ const domain = computed(() => item?.url && new URL(item?.url).hostname)
       </div>
     </div>
 
-    <div v-if="item.content_html" v-html="DOMPurify.sanitize(item.content_html)" style="font-family: Garamond"></div>
+    <div v-if="item.content_html" v-html="DOMPurify.sanitize(item.content_html)"></div>
     <div v-if="item.content_text" v-text="item.content_text"></div>
   </div>
 </template>
 
 <style scoped>
-picture {
+picture, figure {
   @apply block -mx-4 md:-mx-8;
 }
 </style>
