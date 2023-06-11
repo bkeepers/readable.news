@@ -4,9 +4,9 @@ import { useFeedStore } from '../stores/feed.js'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 
 const formats = {
-  "JSON Feed": "feed.json",
-  "RSS": "feed.rss",
-  "Atom": "feed.atom",
+  "JSON Feed": "/api/feed",
+  "RSS": "/api/feed?format=rss",
+  "Atom": "/api/feed?format=atom",
 }
 
 const periods = ["24h", "3d", "1w", "30d", "1y"]
@@ -15,10 +15,10 @@ const feed = useFeedStore()
 
 <template>
   <div>
-    <div class="flex place-items-center gap-4 mb-6">
-      <h1 class="font-bold grow flex align-items-middle">
-        <span class="text-3xl text-black">Feedify</span>
-        <span class="text-xl text-white inline-block px-2 py-1 ml-2 rounded shadow-sm flex items-center gap-2" style="background-color: #ff6600">
+    <div class="flex place-items-center gap-3 mb-6">
+      <h1 class="font-bold grow flex gap-3 align-items-middle">
+        <span class="text-3xl text-black dark:text-white">Readable</span>
+        <span class="text-xl text-white inline-block px-2 py-1 rounded shadow-sm flex items-center gap-2" style="background-color: #ff6600">
           <img src="https://news.ycombinator.com/y18.svg" class="w-5 h-5 border-white border" />
           Hacker News
         </span>

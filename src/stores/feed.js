@@ -7,7 +7,7 @@ export const useFeedStore = defineStore('feed', () => {
   const params = useStorage('params', { period: '3d' })
 
   const api = computed(() => {
-    const url = new URL('/feed.json', window.location)
+    const url = new URL('/api/feed', window.location)
     url.search = new URLSearchParams(unref(params))
     return url.toString()
   })
