@@ -6,7 +6,7 @@ const route = useRoute()
 
 <template>
   <div :class="{
-    'container-xl mx-auto p-8 min-h-screen': true,
+    'min-h-screen': true,
     'bg-slate-100 dark:bg-slate-900 dark:text-slate-200': route.meta.bg !== 'white',
     'bg-white dark:bg-slate-900 dark:text-slate-200': route.meta.bg === 'white'
   }">

@@ -13,20 +13,31 @@ const domain = computed(() => item?.url && new URL(item?.url).hostname)
 </script>
 
 <template>
-  <div v-if="item" class="mx-auto prose prose-slate md:prose-lg lg:prose-xl dark:prose-invert prose-img:-mx-8 prose-img:w-full">
+  <div v-if="item" class="mx-auto prose prose-slate md:prose-lg lg:prose-xl dark:prose-invert py-16 prose-img:w-full">
     <base :href="item.url" />
-    <div class="not-prose mb-4">
-      <div v-if="item.authors?.[0]" class="flex gap-2 place-items-center text-xs mb-3 text-slate-500 truncate">
+    <div class="not-prose border-b pb-4 mb-4 flex flex-col gap-2">
+      <div v-if="item.authors?.[0]" class="flex gap-2 place-items-center text-xs text-slate-500 truncate">
         <img v-if="item.authors[0].avatar" class="avatar" :src="item.authors[0].avatar" />
         {{ item.authors[0].name || domain }}
       </div>
-      <h1 class="text-4xl border-b pb-2 mb-2"><a :href="item.url">{{ item.title }}</a></h1>
-      <div class="text-sm font-bold text-slate-500">
-        <RelativeDate :value="item.date_published" />
+      <h1 class="text-3xl md:text-4xl lg:text-5xl">
+        <a :href="item.url" class="hover:text-slate-900 hover:underline">{{ item.title }}</a>
+      </h1>
+      <div class="text-sm">
+        <RelativeDate :value="item.date_published" class="font-bold text-slate-500/75" />
+      </div>
+      <div class="text-sm">
+        Link: <a :href="item.external_url">{{ item.external_url }}</a>
       </div>
     </div>
 
-    <div v-if="item.content_html" v-html="DOMPurify.sanitize(item.content_html)"></div>
+    <div v-if="item.content_html" v-html="DOMPurify.sanitize(item.content_html)" style="font-family: Garamond"></div>
     <div v-if="item.content_text" v-text="item.content_text"></div>
   </div>
 </template>
+
+<style scoped>
+picture {
+  @apply block -mx-4 md:-mx-8;
+}
+</style>

@@ -21,5 +21,5 @@ const date = computed(() => Date.parse(props.value))
 </script>
 
 <template>
-  <time>{{ timeAgo.format(date, 'mini-minute') }}</time>
+  <time :datetime="value" :title="value">{{ timeAgo.format(date, 'mini-minute') }}</time>
 </template>
