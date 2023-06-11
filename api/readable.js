@@ -1,7 +1,7 @@
 import readify from '../lib/readify.js';
 
 // Cache for 1 hour
-const cacheControl = 'max-age=' + (60 * 60)
+const cacheControl = 's-maxage=' + (60 * 60)
 
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', cacheControl)
