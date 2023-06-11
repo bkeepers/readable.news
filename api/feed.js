@@ -4,7 +4,7 @@ import jsonfeedToAtom from 'jsonfeed-to-atom';
 
 const { VERCEL_ENV, VERCEL_URL } = process.env;
 const url = (VERCEL_ENV === 'production' ? `https://` : `http://`) + VERCEL_URL;
-const cacheControl = 's-maxage=' + (60 * 15)
+const cacheControl = 'max-age=3600, s-maxage=3600, stale-while-revalidate';
 
 async function readify(item) {
   const api = `${url}/api/readable?url=${encodeURIComponent(item.url)}`;
