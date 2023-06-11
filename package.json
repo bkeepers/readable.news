@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev:client": "vite",
-    "dev:server": "nodemon src/index.js",
+    "dev:server": "nodemon server/index.js",
     "dev": "concurrently 'npm:dev:client' 'npm:dev:server'",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node src/index.js"
+    "start": "node server/index.js"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.14",
