@@ -18,9 +18,9 @@ export default async function handler(req, res) {
   res.setHeader('Cache-Control', cacheControl);
   const feed = {
     version: "https://jsonfeed.org/version/1",
-    title: "Hacker News Feed",
+    title: "Readable: Hacker News",
     home_page_url: url,
-    feed_url: `${url}/api/feed?format=${format}`,
+    feed_url: `${url}/api/feed?format=${format || json}`,
     icon: "https://news.ycombinator.com/y18.svg",
     favicon: "https://news.ycombinator.com/favicon.ico",
     items: await Promise.all((await storify({ period })).map(readify))
