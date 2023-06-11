@@ -1,28 +1,30 @@
 import storify from '../lib/storify.js';
-import readify from '../lib/readify.js';
 import jsonfeedToRSS from 'jsonfeed-to-rss';
 import jsonfeedToAtom from 'jsonfeed-to-atom';
 
+const { VERCEL_ENV, VERCEL_URL } = process.env;
+const url = (VERCEL_ENV === 'production' ? `https://` : `http://`) + VERCEL_URL;
 const cacheControl = 'max-age=' + (60 * 15)
 
-async function createFeed({ period }) {
-  return {
+async function readify(item) {
+  const api = `${url}/api/readable?url=${encodeURIComponent(item.url)}`;
+  const res = await fetch(api);
+  return { ...item, ...await res.json() }
+}
+
+export default async function handler(req, res) {
+  const { format, period } = req.query;
+
+  res.setHeader('Cache-Control', cacheControl);
+  const feed = {
     version: "https://jsonfeed.org/version/1",
     title: "Hacker News Feed",
-    home_page_url: "https://feedify.herokuapp.com/",
-    feed_url: "https://feedify.herokuapp.com/",
+    home_page_url: url,
+    feed_url: `${url}/api/feed?format=${format}`,
     icon: "https://news.ycombinator.com/y18.svg",
     favicon: "https://news.ycombinator.com/favicon.ico",
     items: await Promise.all((await storify({ period })).map(readify))
-  }
-}
-
-
-export default async function handler(req, res) {
-  const { format } = req.query;
-
-  res.setHeader('Cache-Control', cacheControl)
-  const feed = await createFeed(req.query);
+  };
 
   if(format === 'rss') {
     res.setHeader('Content-Type', 'application/rss+xml');
