@@ -28,6 +28,8 @@ async function readable (url, browser = browsers.node) {
 export default async function handler(req, res) {
   const { url } = req.query;
 
+  console.log(`Making readable ${url}`)
+
   try {
     const item = await readable(url)
     res.setHeader('Cache-Control', cacheControl)
