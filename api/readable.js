@@ -3,7 +3,7 @@ import formats from '../lib/formats/index.js'
 
 // Cache for 12 hours
 const age = 60 * 60 * 12;
-const cacheControl = `max-age=${age}, s-maxage=${age}, stale-while-revalidate`;
+const cacheControl = `public, max-age=${age}, s-maxage=${age}, stale-while-revalidate`;
 
 async function readable (url, browser = browsers.node) {
   const { contentType, text } = await browser(url);
