@@ -16,7 +16,6 @@
     "@vueuse/core": "^10.1.2",
     "@vueuse/router": "^10.1.2",
     "dompurify": "^3.0.3",
-    "generic-pool": "^3.9.0",
     "javascript-time-ago": "^2.5.9",
     "jsonfeed-to-atom": "^1.2.4",
     "jsonfeed-to-rss": "^3.0.7",
