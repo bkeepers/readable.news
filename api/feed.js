@@ -2,8 +2,8 @@ import storify from '../lib/storify.js';
 import jsonfeedToRSS from 'jsonfeed-to-rss';
 import jsonfeedToAtom from 'jsonfeed-to-atom';
 
-const { VERCEL_ENV, VERCEL_URL } = process.env;
-const APP_URL = (VERCEL_ENV === 'production' ? `https://` : `http://`) + VERCEL_URL;
+const { VERCEL_ENV, VERCEL_URL, APP_DOMAIN } = process.env;
+const APP_URL = (VERCEL_ENV === 'production' ? `https://` : `http://`) + (APP_DOMAIN || VERCEL_URL);
 const cacheControl = 'public, max-age=900, s-maxage=900, stale-while-revalidate';
 
 async function readify(item, fetchOptions = {}) {
