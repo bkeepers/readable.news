@@ -3,16 +3,22 @@ import { useStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { useFetch } from '@vueuse/core'
 
+function urlFor(path, params) {
+  const url = new URL(path, window.location)
+  url.search = new URLSearchParams(unref(params))
+  return url.toString()
+}
+
 export const useFeedStore = defineStore('feed', () => {
   const params = useStorage('params', { period: '3d' })
 
-  const api = computed(() => {
-    const url = new URL('/api/feed', window.location)
-    url.search = new URLSearchParams(unref(params))
-    return url.toString()
-  })
+  const formats = {
+    "JSON Feed": computed(() => urlFor('/api/feed', params.value)),
+    "RSS": computed(() => urlFor("/api/feed", { format: 'rss', ...params.value })),
+    "Atom": computed(() => urlFor("/api/feed", { format: 'atom', ...params.value })),
+  }
 
-  const fetch = useFetch(api, { refetch: true }).json()
+  const fetch = useFetch(formats["JSON Feed"], { refetch: true }).json()
   const items = computed(() => fetch.data.value?.items)
 
   function find(id) {
@@ -21,5 +27,5 @@ export const useFeedStore = defineStore('feed', () => {
     })
   }
 
-  return { items, params, find, ...fetch }
+  return { items, params, formats, find, ...fetch }
 })
