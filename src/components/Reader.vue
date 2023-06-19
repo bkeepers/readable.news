@@ -14,6 +14,9 @@ const domain = computed(() => props.item?.url && new URL(props.item?.url).hostna
   <div
     class="mx-auto prose prose-slate sm:prose-lg md:prose-xl dark:prose-invert p-4 md:p-8 lg:p-12 prose-img:w-full">
     <base :href="item.url" />
+    <figure v-if="item.image" class="mb-4 md:mb-8 lg:mb-12 -mt-4 md:-mt-8 lg:-mt-4">
+      <img :src="item.image" />
+    </figure>
     <div class="not-prose border-b pb-4 mb-4 flex flex-col gap-2">
       <div v-if="item.authors?.[0]" class="flex gap-2 place-items-center text-xs text-slate-500 truncate">
         <img v-if="item.authors[0].avatar" class="avatar" :src="item.authors[0].avatar" />
@@ -38,6 +41,6 @@ const domain = computed(() => props.item?.url && new URL(props.item?.url).hostna
 <style scoped>
 picture,
 figure {
-  @apply block -mx-4 md:-mx-8;
+  @apply block -mx-4 md:-mx-8 lg:-mx-12;
 }
 </style>
