@@ -8,7 +8,7 @@ const feed = useFeedStore()
 </script>
 
 <template>
-  <div class="sticky border-b bg-white/80 backdrop-blur-lg backdrop-brightness-150 top-0 left-0 right-0 shadow">
+  <div class="sticky border dark:border-slate-950/60 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg backdrop-brightness-90 top-0 left-0 right-0 shadow-xl">
     <div class="container-xl mx-auto p-4 md:px-8 lg:px-16 flex place-items-center gap-3 flex-wrap">
       <div class="grow">
         <h1 class="font-bold flex gap-3 align-items-middle">
