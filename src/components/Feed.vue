@@ -45,7 +45,7 @@ const feed = useFeedStore()
         </select>
       </form>
     </div>
-    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <Item v-for="item in feed.items" :key="item.id" v-bind="item" />
       <template v-if="feed.isFetching">
         <Item v-for="i in 12" :key="i" skeleton :style="`animation-delay: ${Math.floor(Math.random() * 400)}ms;`" />
