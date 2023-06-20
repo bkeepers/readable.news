@@ -1,5 +1,6 @@
 <script setup>
 import { useFeedStore } from '../stores/feed.js'
+import Nav from '../components/Nav.vue'
 import Reader from '../components/Reader.vue'
 
 const props = defineProps({
@@ -10,5 +11,8 @@ const item = useFeedStore().find(props.id)
 </script>
 
 <template>
-  <Reader v-if="item" :item="item" />
+  <div>
+    <Nav />
+    <Reader v-if="item" :item="item" />
+  </div>
 </template>

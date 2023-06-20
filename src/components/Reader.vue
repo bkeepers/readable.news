@@ -13,7 +13,6 @@ const domain = computed(() => props.item?.url && new URL(props.item?.url).hostna
 <template>
   <div
     class="mx-auto prose prose-slate sm:prose-lg md:prose-xl dark:prose-invert p-4 md:p-8 lg:p-12 prose-img:w-full">
-    <base :href="item.url" />
     <figure v-if="item.image" class="mb-4 md:mb-8 lg:mb-12 -mt-4 md:-mt-8 lg:-mt-4">
       <img :src="item.image" />
     </figure>
