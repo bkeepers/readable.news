@@ -1,5 +1,19 @@
 {
   "github": {
     "silent": true
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/feed?period=24h",
+      "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/feed?period=3d",
+      "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/feed?period=1w",
+      "schedule": "*/15 * * * *"
+    }
+  ]
 }
