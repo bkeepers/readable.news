@@ -82,7 +82,7 @@ const author = props.authors?.[0]
 }
 
 .item-cover {
-  @apply aspect-video object-cover shadow-inner relative overflow-hidden bg-slate-200 dark:bg-slate-700 border-none outline-none;
+  @apply aspect-[1.9/1] object-cover shadow-inner relative overflow-hidden bg-slate-200 dark:bg-slate-700 border-none outline-none;
 }
 
 .skeleton-text {
