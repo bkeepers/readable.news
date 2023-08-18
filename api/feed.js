@@ -15,7 +15,7 @@ async function readify(item, fetchOptions = {}) {
   try {
     const res = await fetch(api, fetchOptions);
     if (!res.ok) throw new Error(res.statusText)
-    return { ...item, ...await res.json() }
+    return { ...await res.json(), ...item }
   } catch (err) {
     console.error(`Error fetching ${api}`, err)
     return item
