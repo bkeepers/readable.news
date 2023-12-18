@@ -25,7 +25,7 @@
     "puppeteer-core": "^20.5.0",
     "truncate-html": "^1.0.4",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
