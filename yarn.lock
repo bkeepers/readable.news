@@ -2120,13 +2120,13 @@
   resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-10.1.2.tgz#d8ffe557b1042efd03a0aa88540a00c25d193ee3"
   integrity sha512-3mc5BqN9aU2SqBeBuWE7ne4OtXHoHKggNgxZR2K+zIW4YLsy6xoZ4/9vErQs6tvoKDX6QAqm3lvsrv0mczAwIQ==
 
-"@vueuse/router@^10.1.2":
-  version "10.1.2"
-  resolved "https://registry.yarnpkg.com/@vueuse/router/-/router-10.1.2.tgz#b0ea3c47066d93ae49f83ce9ab62df2c5abfd08f"
-  integrity sha512-99KhTBZliU5gRPHPhi7UO97vArgWIYLomLeCPYJQvbg1gYYa3BVX/uFDcdOaVYhdz5rWDeY/DaeW5CeNYR7zzQ==
+"@vueuse/router@^10.7.0":
+  version "10.7.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/router/-/router-10.7.0.tgz#193ee69345d23429238031fa85654a984acbe05f"
+  integrity sha512-8NQ12V3dtiIEKyd32RzzXLOqU+NC5/9cf7kv5cGOQzJB+Ne8j+1VmRz4ciOhOyHuiBJSfjwSqKDTzvsczZUBlQ==
   dependencies:
-    "@vueuse/shared" "10.1.2"
-    vue-demi ">=0.14.0"
+    "@vueuse/shared" "10.7.0"
+    vue-demi ">=0.14.6"
 
 "@vueuse/shared@10.1.2":
   version "10.1.2"
@@ -2134,6 +2134,13 @@
   integrity sha512-1uoUTPBlgyscK9v6ScGeVYDDzlPSFXBlxuK7SfrDGyUTBiznb3mNceqhwvZHjtDRELZEN79V5uWPTF1VDV8svA==
   dependencies:
     vue-demi ">=0.14.0"
+
+"@vueuse/shared@10.7.0":
+  version "10.7.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-10.7.0.tgz#21e425cc5ede421e0cda38ac59a0beee6da86b1b"
+  integrity sha512-kc00uV6CiaTdc3i1CDC4a3lBxzaBE9AgYNtFN87B5OOscqeWElj/uza8qVDmk7/U8JbqoONLbtqiLJ5LGRuqlw==
+  dependencies:
+    vue-demi ">=0.14.6"
 
 "@web3-storage/multipart-parser@^1.0.0":
   version "1.0.0"
@@ -7110,10 +7117,10 @@ vm2@^3.9.17:
     acorn "^8.7.0"
     acorn-walk "^8.2.0"
 
-vue-demi@>=0.14.0, vue-demi@>=0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.5.tgz#676d0463d1a1266d5ab5cba932e043d8f5f2fbd9"
-  integrity sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==
+vue-demi@>=0.14.0, vue-demi@>=0.14.5, vue-demi@>=0.14.6:
+  version "0.14.6"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.6.tgz#dc706582851dc1cdc17a0054f4fec2eb6df74c92"
+  integrity sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==
 
 vue-router@^4.2.2:
   version "4.2.2"
