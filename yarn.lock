@@ -2610,10 +2610,10 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chardet@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/chardet/-/chardet-1.5.1.tgz#2a15770a46ce15e25a99f2741c949f43f9925dd5"
-  integrity sha512-0XMOtA52igKDOIfvJZJ6v0+J9yMF3IuYyEa5oFUxBXA01G6mwCNKpul3bgbFf7lmZuqwN/oyg/zQ1cGS7NyJkQ==
+chardet@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/chardet/-/chardet-2.0.0.tgz#24a74bd3954965ba2d30f490a915fc3cf053051f"
+  integrity sha512-xVgPpulCooDjY6zH4m9YW3jbkaBe3FKIAvF5sj5t7aBNsVl2ljIE+xwJ4iNgiDZHFQvNIpjdKdVOQvvk5ZfxbQ==
 
 cheerio-select@^2.1.0:
   version "2.1.0"
@@ -5492,15 +5492,15 @@ onetime@^5.1.0, onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-open-graph-scraper@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-6.1.0.tgz#c41f44bf9ab0e2e2fced012893d5acc6268b037e"
-  integrity sha512-fD5vdUPFLXPQUj2ktqSJxx4AgkFmcj9MJnoA13CVkjBt5H6gObeSUVXsjz0yjhMRolHkZrEBTSMkRUeStH9khA==
+open-graph-scraper@^6.3.2:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-6.3.2.tgz#ce64641aa7da2b677d8f1bafd64cbbf2c6c5716c"
+  integrity sha512-3HbQwpSZ42hqqpDmZ3ZUOCuS1TuKqRWm6gEIw/HfqWDzwHaEJJR/WGi1prHD2gBaKYPjAHFaSTjKitJHTwMVPA==
   dependencies:
-    chardet "^1.5.1"
+    chardet "^2.0.0"
     cheerio "^1.0.0-rc.12"
-    undici "^5.22.1"
-    validator "^13.9.0"
+    undici "^5.26.4"
+    validator "^13.11.0"
 
 optionator@^0.8.1:
   version "0.8.3"
@@ -6889,7 +6889,7 @@ unbzip2-stream@1.4.3:
     buffer "^5.2.1"
     through "^2.3.8"
 
-undici@^5.22.1:
+undici@^5.26.4:
   version "5.28.2"
   resolved "https://registry.yarnpkg.com/undici/-/undici-5.28.2.tgz#fea200eac65fc7ecaff80a023d1a0543423b4c91"
   integrity sha512-wh1pHJHnUeQV5Xa8/kyQhO7WFa8M34l026L5P/+2TYiakvGy5Rdc8jWZVyG7ieht/0WgJLEd3kcU5gKx+6GC8w==
@@ -7066,10 +7066,10 @@ v8-compile-cache-lib@^3.0.1:
   resolved "https://registry.yarnpkg.com/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
   integrity sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==
 
-validator@^13.9.0:
-  version "13.9.0"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-13.9.0.tgz#33e7b85b604f3bbce9bb1a05d5c3e22e1c2ff855"
-  integrity sha512-B+dGG8U3fdtM0/aNK4/X8CXq/EcxU2WPrPEkJGslb47qyHsxmbggTWK0yEA4qnYVNF+nxNlN88o14hIcPmSIEA==
+validator@^13.11.0:
+  version "13.11.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-13.11.0.tgz#23ab3fd59290c61248364eabf4067f04955fbb1b"
+  integrity sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==
 
 vary@~1.1.2:
   version "1.1.2"
