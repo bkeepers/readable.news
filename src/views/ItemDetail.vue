@@ -13,6 +13,9 @@ const item = useFeedStore().find(props.id)
 <template>
   <div>
     <Nav />
-    <Reader v-if="item" :item="item" />
+    <Reader
+      v-if="item"
+      :item="item"
+    />
   </div>
 </template>

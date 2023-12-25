@@ -1,5 +1,6 @@
 <script setup>
-import RelativeDate from './RelativeDate.vue';
+/* eslint-disable vue/prop-name-casing */
+import RelativeDate from './RelativeDate.vue'
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -11,7 +12,7 @@ const props = defineProps({
   excerpt: String,
   date_published: String,
   authors: Array,
-  skeleton: Boolean,
+  skeleton: Boolean
 })
 
 const domain = computed(() => props.url && new URL(props.url).hostname)
@@ -19,36 +20,67 @@ const author = props.authors?.[0]
 </script>
 
 <template>
-  <div v-if="skeleton" class="item animate-pulse">
-    <div class="item-cover"></div>
+  <div
+    v-if="skeleton"
+    class="item animate-pulse"
+  >
+    <div class="item-cover" />
     <div class="item-body">
       <div class="item-author opacity-50 mb-2">
-        <div class="w-3 h-3 rounded skeleton-text"></div>
-        <div class="skeleton-text h-3 w-[50%]"></div>
+        <div class="w-3 h-3 rounded skeleton-text" />
+        <div class="skeleton-text h-3 w-[50%]" />
       </div>
       <div class="item-title">
-        <div class="skeleton-text h-5 max-w-[95%] mb-2.5"></div>
-        <div class="skeleton-text h-5 max-w-[50%] mb-2.5"></div>
+        <div class="skeleton-text h-5 max-w-[95%] mb-2.5" />
+        <div class="skeleton-text h-5 max-w-[50%] mb-2.5" />
       </div>
       <div class="item-excerpt">
-        <div class="skeleton-text h-2 max-w-[95%] mb-2.5"></div>
-        <div class="skeleton-text h-2 max-w-[75%] mb-2.5"></div>
+        <div class="skeleton-text h-2 max-w-[95%] mb-2.5" />
+        <div class="skeleton-text h-2 max-w-[75%] mb-2.5" />
       </div>
     </div>
     <div class="item-footer">
-      <div class="skeleton-text h-2 w-6"></div>
+      <div class="skeleton-text h-2 w-6" />
     </div>
   </div>
-  <router-link v-else :to="{ name: 'item', params: { id } }" class="item">
-    <img v-if="image" :src="image" class="item-cover">
-    <div v-else class="item-cover"></div>
+  <router-link
+    v-else
+    :to="{ name: 'item', params: { id } }"
+    class="item"
+  >
+    <img
+      v-if="image"
+      :src="image"
+      class="item-cover"
+    >
+    <div
+      v-else
+      class="item-cover"
+    />
     <div class="item-body">
-      <div v-if="author" class="item-author">
-        <img v-if="author.avatar" class="avatar" :src="author.avatar" />
+      <div
+        v-if="author"
+        class="item-author"
+      >
+        <img
+          v-if="author.avatar"
+          class="avatar"
+          :src="author.avatar"
+        >
         {{ author.name || domain }}
       </div>
-      <h2 class="item-title" :title="title">{{ title }}</h2>
-      <p class="item-excerpt" :title="excerpt">{{ excerpt }}</p>
+      <h2
+        class="item-title"
+        :title="title"
+      >
+        {{ title }}
+      </h2>
+      <p
+        class="item-excerpt"
+        :title="excerpt"
+      >
+        {{ excerpt }}
+      </p>
     </div>
     <div class="item-footer">
       <RelativeDate :value="date_published" />

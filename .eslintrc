@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "plugin:vue/recommended",
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2022
+  },
+  "rules": {
+    "vue/multi-word-component-names": 0,
+    "vue/require-default-prop": 0,
+    "camelcase": 0,
+  }
+}
