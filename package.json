@@ -22,7 +22,7 @@
     "linkedom": "^0.16.5",
     "open-graph-scraper": "^6.3.2",
     "pinia": "^2.1.7",
-    "puppeteer-core": "^21.6.1",
+    "puppeteer-core": "^21.10.0",
     "truncate-html": "^1.0.4",
     "vue": "^3.3.12",
     "vue-router": "^4.2.5"
