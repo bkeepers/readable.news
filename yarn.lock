@@ -1962,6 +1962,13 @@ iconv-lite@0.4.24:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
+iconv-lite@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.6.3.tgz#a52f80bf38da1952eb5c681790719871a1a72501"
+  integrity sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==
+  dependencies:
+    safer-buffer ">= 2.1.2 < 3.0.0"
+
 ieee754@^1.1.13:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
@@ -2515,14 +2522,15 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
-open-graph-scraper@^6.3.2:
-  version "6.3.2"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-6.3.2.tgz#ce64641aa7da2b677d8f1bafd64cbbf2c6c5716c"
-  integrity sha512-3HbQwpSZ42hqqpDmZ3ZUOCuS1TuKqRWm6gEIw/HfqWDzwHaEJJR/WGi1prHD2gBaKYPjAHFaSTjKitJHTwMVPA==
+open-graph-scraper@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-6.4.0.tgz#52bfbb3075d311cc25aac5cc1fff02e2c60c19a7"
+  integrity sha512-UiSs39rqsYkIBf46yaGIxj6POMCgvQuGdWqRd0KtGLR6vo3ENxJLl5fyfOm1Y4cKubZvpKqSZ45DTR10wKH/KQ==
   dependencies:
     chardet "^2.0.0"
     cheerio "^1.0.0-rc.12"
-    undici "^5.26.4"
+    iconv-lite "^0.6.3"
+    undici "^6.6.2"
     validator "^13.11.0"
 
 os-paths@^4.0.1:
@@ -2906,7 +2914,7 @@ safe-buffer@^5.1.2, safe-buffer@^5.2.1, safe-buffer@~5.2.0:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
-"safer-buffer@>= 2.1.2 < 3":
+"safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
@@ -3308,10 +3316,10 @@ undici@5.26.5:
   dependencies:
     "@fastify/busboy" "^2.0.0"
 
-undici@^5.26.4:
-  version "5.28.2"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-5.28.2.tgz#fea200eac65fc7ecaff80a023d1a0543423b4c91"
-  integrity sha512-wh1pHJHnUeQV5Xa8/kyQhO7WFa8M34l026L5P/+2TYiakvGy5Rdc8jWZVyG7ieht/0WgJLEd3kcU5gKx+6GC8w==
+undici@^6.6.2:
+  version "6.6.2"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-6.6.2.tgz#8dce5ae54e8a3bc7140c2b2a0972b5fde9a88efb"
+  integrity sha512-vSqvUE5skSxQJ5sztTZ/CdeJb1Wq0Hf44hlYMciqHghvz+K88U0l7D6u1VsndoFgskDcnU+nG3gYmMzJVzd9Qg==
   dependencies:
     "@fastify/busboy" "^2.0.0"
 
