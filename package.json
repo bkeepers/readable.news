@@ -19,7 +19,7 @@
     "javascript-time-ago": "^2.5.9",
     "jsonfeed-to-atom": "^1.2.4",
     "jsonfeed-to-rss": "^3.0.7",
-    "linkedom": "^0.16.5",
+    "linkedom": "^0.16.10",
     "open-graph-scraper": "^6.3.2",
     "pinia": "^2.1.7",
     "puppeteer-core": "^21.6.1",
