@@ -1,17 +1,16 @@
 <script>
+import { computed } from 'vue'
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
-</script>
-
-<script setup>
-import { computed } from 'vue'
 
 try {
   TimeAgo.addDefaultLocale(en)
 } catch {
   // ignore error when this module is reloaded
 }
+</script>
 
+<script setup>
 const timeAgo = new TimeAgo('en-US')
 const props = defineProps({
   value: String
