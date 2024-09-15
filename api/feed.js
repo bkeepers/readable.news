@@ -1,9 +1,7 @@
 import storify from '../lib/storify.js'
 import jsonfeedToRSS from 'jsonfeed-to-rss'
 import jsonfeedToAtom from 'jsonfeed-to-atom'
-
-const { VERCEL_ENV, VERCEL_URL, APP_DOMAIN } = process.env
-const APP_URL = VERCEL_ENV === 'production' ? `https://${APP_DOMAIN || VERCEL_URL}` : 'http://localhost:3000'
+import { APP_URL } from '../lib/settings.js'
 
 const cacheControl = 'public, max-age=900, s-maxage=900, stale-while-revalidate'
 
