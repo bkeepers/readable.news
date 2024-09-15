@@ -24,7 +24,10 @@ async function event ({ name, url, headers }) {
 }
 
 export default async function handler (req, res) {
-  res.status(200).setHeader('Content-Type', 'image/png').end(PNG)
   const url = `${APP_URL}/#/render/${encodeURIComponent(req.query.url)}`
   await event({ name: 'pageview', headers: req.headers, url })
+
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+  res.setHeader('Content-Type', 'image/png')
+  res.status(200).send(PNG)
 }
